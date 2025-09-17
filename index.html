@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노성래 | 기술 인포그래픽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            left: -43px; 
+            top: 1.25rem; 
+            transform: translateY(-50%);
+            background-color: white;
+            border: 4px solid #4f46e5;
+        }
+        .section-title {
+            border-left: 5px solid #4f46e5;
+            padding-left: 1rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            background-color: #eef2ff;
+            color: #4338ca;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0.25rem;
+            line-height: 1.5;
+        }
+        .level {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.5rem;
+            margin-left: 0.5rem;
+            color: white;
+        }
+        .level-expert { background-color: #4f46e5; }
+        .level-advanced { background-color: #818cf8; }
+        .level-proficient { background-color: #a5b4fc; }
+        .level-beginner { background-color: #c7d2fe; }
+        .header-gradient {
+            background: linear-gradient(90deg, #4f46e5, #818cf8);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-6 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="mb-10 p-8 rounded-xl text-white header-gradient shadow-lg">
+            <h1 class="text-4xl font-black">노성래 | Developer Career Infographic</h1>
+            <p class="text-xl mt-3">16년 경력의 개발 리더로서, 임베디드부터 최신 웹 기술까지 폭넓은 경험을 바탕으로 복잡한 문제를 해결합니다. <br>특히 Vue/React 기반 대규모 애플리케이션 아키텍처 설계와 성능 최적화에 강점이 있으며, 코드 리뷰와 기술 공유 문화를 주도하여 팀의 기술 역량을 상향 평준화시킨 경험이 있습니다.</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column -->
+            <div class="lg:col-span-1 space-y-8">
+                <div class="card p-6">
+                    <h2 class="section-title mb-6">회사 연혁</h2>
+                    <div class="relative border-l-2 border-indigo-200 ml-2">
+                        <!-- Timeline Items -->
+                         <div class="mb-16 ml-8 relative timeline-item">
+                            <h3 class="text-lg font-bold text-indigo-700">콜로세움코퍼레이션</h3>
+                            <p class="text-sm text-gray-500">2024.12 - 2025.09</p>
+                            <p class="text-md mt-2">FE 기술 역량 강화 및 개발 문화 개선</p>
+                        </div>
+                        <div class="mb-16 ml-8 relative timeline-item">
+                             <h3 class="text-lg font-bold text-indigo-700">(주)티오더</h3>
+                            <p class="text-sm text-gray-500">2023.12 - 2024.12</p>
+                            <p class="text-md mt-2">주문 태블릿 성능 개선 및 안드로이드 브릿지 설계</p>
+                        </div>
+                        <div class="mb-16 ml-8 relative timeline-item">
+                            <h3 class="text-lg font-bold text-indigo-700">(주)엑셈</h3>
+                            <p class="text-sm text-gray-500">2022.11 - 2023.12</p>
+                             <p class="text-md mt-2">AIOps FE 레거시 리팩토링 및 아키텍처 재설계</p>
+                        </div>
+                        <div class="mb-16 ml-8 relative timeline-item">
+                             <h3 class="text-lg font-bold text-indigo-700">(주)웨이브라이프스타일테크</h3>
+                            <p class="text-sm text-gray-500">2022.03 - 2022.10</p>
+                             <p class="text-md mt-2">요리 자동화 시스템 서버 및 관제 시스템 개발</p>
+                        </div>
+                        <div class="mb-16 ml-8 relative timeline-item">
+                            <h3 class="text-lg font-bold text-indigo-700">(주)티모넷</h3>
+                            <p class="text-sm text-gray-500">2013.03 - 2022.03</p>
+                             <p class="text-md mt-2">핀테크(댐댐, 제로페이) 및 IoT 단말기 개발</p>
+                        </div>
+                        <div class="mb-16 ml-8 relative timeline-item">
+                             <h3 class="text-lg font-bold text-indigo-700">(주) 아크로칩</h3>
+                            <p class="text-sm text-gray-500">2012.01 - 2012.10</p>
+                             <p class="text-md mt-2">골프 거리 측정기 펌웨어 및 PC 프로그램 개발</p>
+                        </div>
+                        <div class="mb-16 ml-8 relative timeline-item">
+                            <h3 class="text-lg font-bold text-indigo-700">(주)티모넷</h3>
+                            <p class="text-sm text-gray-500">2011.05 - 2012.01</p>
+                            <p class="text-md mt-2">아이폰용 NFC 케이스 펌웨어 및 라이브러리 개발</p>
+                        </div>
+                        <div class="ml-8 relative timeline-item">
+                           <h3 class="text-lg font-bold text-indigo-700">와이콤테크놀러지</h3>
+                            <p class="text-sm text-gray-500">2008.11 - 2011.01</p>
+                            <p class="text-md mt-2">RFID 리더기 펌웨어 및 임베디드 S/W 개발</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="lg:col-span-2 space-y-8">
+                 <div class="card p-6">
+                    <h2 class="section-title mb-6">주요 프로젝트 기술 복잡도</h2>
+                    <canvas id="projectComplexityChart"></canvas>
+                </div>
+                <div class="card p-6">
+                    <h2 class="section-title mb-6">기술 스택 진화</h2>
+                    <canvas id="stackEvolutionChart"></canvas>
+                </div>
+                <div class="card p-6">
+                     <h2 class="section-title mb-6">핵심 기술 스택</h2>
+                     <div class="space-y-4">
+                         <div>
+                             <h4 class="font-bold text-indigo-600">Languages</h4>
+                             <div class="flex flex-wrap">
+                                 <span class="tag">JavaScript <span class="level level-expert">전문</span></span>
+                                 <span class="tag">TypeScript <span class="level level-expert">전문</span></span>
+                                 <span class="tag">C <span class="level level-expert">전문</span></span>
+                                 <span class="tag">Java <span class="level level-advanced">상급</span></span>
+                                 <span class="tag">Go <span class="level level-proficient">중급</span></span>
+                                 <span class="tag">Objective-C <span class="level level-beginner">초급</span></span>
+                             </div>
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-indigo-600">Frontend</h4>
+                             <div class="flex flex-wrap">
+                                <span class="tag">Vue.js (2/3) <span class="level level-expert">전문</span></span>
+                                <span class="tag">React.js <span class="level level-expert">전문</span></span>
+                                <span class="tag">Next.js <span class="level level-advanced">상급</span></span>
+                                <span class="tag">Svelte <span class="level level-advanced">상급</span></span>
+                                <span class="tag">Tanstack Query <span class="level level-advanced">상급</span></span>
+                                <span class="tag">RxJS <span class="level level-proficient">중급</span></span>
+                                <span class="tag">D3.js <span class="level level-beginner">초급</span></span>
+                             </div>
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-indigo-600">Backend</h4>
+                             <div class="flex flex-wrap">
+                                 <span class="tag">Spring Boot <span class="level level-advanced">상급</span></span>
+                                 <span class="tag">Spring Framework <span class="level level-advanced">상급</span></span>
+                                 <span class="tag">NestJS <span class="level level-beginner">초급</span></span>
+                             </div>
+                         </div>
+                          <div>
+                             <h4 class="font-bold text-indigo-600">Embedded & IoT</h4>
+                             <div class="flex flex-wrap">
+                                 <span class="tag">Cortex M3 <span class="level level-expert">전문</span></span>
+                                 <span class="tag">NFC <span class="level level-expert">전문</span></span>
+                                 <span class="tag">CAN <span class="level level-expert">전문</span></span>
+                                 <span class="tag">8051 <span class="level level-advanced">상급</span></span>
+                                 <span class="tag">MQTT <span class="level level-advanced">상급</span></span>
+                             </div>
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-indigo-600">Infra & DevOps</h4>
+                             <div class="flex flex-wrap">
+                                 <span class="tag">AWS (EC2, S3) <span class="level level-proficient">중급</span></span>
+                                 <span class="tag">Docker <span class="level level-proficient">중급</span></span>
+                                 <span class="tag">Github Actions <span class="level level-advanced">상급</span></span>
+                             </div>
+                         </div>
+                         <div>
+                            <h4 class="font-bold text-indigo-600">Tools</h4>
+                            <div class="flex flex-wrap">
+                                <span class="tag">Git</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Storybook</span><span class="tag">Vite</span><span class="tag">Turborepo</span>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+                 <div class="card p-6">
+                    <h2 class="section-title mb-6">Leadership & Methodology</h2>
+                    <div class="space-y-4">
+                       <div>
+                           <h4 class="font-bold text-indigo-600">기술 문화 개선</h4>
+                           <p class="text-sm text-gray-700 mt-1">사내 코드 리뷰 문화 정착, FE 기술 컨벤션 수립 및 전파</p>
+                       </div>
+                       <div>
+                           <h4 class="font-bold text-indigo-600">아키텍처 설계 및 제안</h4>
+                           <p class="text-sm text-gray-700 mt-1">BFF, 모노레포 등 신규 아키텍처 도입 주도</p>
+                       </div>
+                       <div>
+                           <h4 class="font-bold text-indigo-600">팀 성장 기여</h4>
+                           <p class="text-sm text-gray-700 mt-1">주 1회 커피챗 및 기술 공유 세션을 통한 팀원 역량 강화</p>
+                       </div>
+                       <div>
+                           <h4 class="font-bold text-indigo-600">프로세스 혁신</h4>
+                           <p class="text-sm text-gray-700 mt-1">Git-flow 도입, API 문서 기반(OpenAPI) 협업 프로세스 제안</p>
+                       </div>
+                   </div>
+               </div>
+                <div class="card p-6">
+                    <h2 class="section-title mb-6">종합 기술 역량</h2>
+                    <canvas id="competencyChart"></canvas>
+                </div>
+                <div class="card p-6">
+                    <h2 class="section-title mb-6">Performance 분석</h2>
+                    <canvas id="performanceChart"></canvas>
+                     <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm text-gray-700">
+                        <p><strong>• Technology (Creates):</strong> 새로운 라이브러리 개발, 다양한 기술 스택 마이그레이션 경험 등을 토대로 특정 기술 분야를 깊이 있게 숙달하고 문제를 해결합니다.</p>
+                        <p><strong>• System (Leads):</strong> BFF, 모노레포 등 신규 아키텍처를 설계하고 도입을 주도한 경험을 바탕으로 팀의 기술 방향성을 제시하고 복잡한 시스템의 설계를 주도합니다.</p>
+                        <p><strong>• People (Coordinates):</strong> 코드 리뷰, 기술 공유, 커피챗 등을 통해 팀원 성장을 이끈 경험을 토대로 동료의 성장을 돕고 긍정적인 관계를 형성합니다.</p>
+                        <p><strong>• Process (Defines):</strong> Git-flow, API 문서 기반 개발 등 새로운 개발 프로세스를 정의하고 도입한 경험을 근거로 팀의 효율성을 높이는 개발 프로세스를 새롭게 정의하고 도입합니다.</p>
+                        <p><strong>• Influence (Engineering):</strong> 특정 팀을 넘어 FE 기술 문화 전반에 긍정적인 영향을 주고, 타 팀의 문제 해결에 기여한 점을 고려하여 엔지니어링 전반에 긍정적 영향력을 발휘합니다.</p>
+                    </div>
+                </div>
+                 <div class="card p-6">
+                    <h2 class="section-title mb-6">주요 정량적 성과</h2>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li>태블릿 UI 반응 속도 개선: Long touch 이벤트 라이브러리 개발을 통해 반응 속도 <strong class="text-indigo-600">700ms에서 200ms로 71% 단축</strong></li>
+                        <li>프론트엔드 개발 효율화: Vanilla JS 전환 및 코드 리팩토링을 통해 <strong class="text-indigo-600">업무 효율 2.5배 향상</strong></li>
+                        <li>배포 시간 단축: Github Action 캐시 오류 수정을 통해 <strong class="text-indigo-600">ECS 배포 시간 15분 → 5분으로 66% 단축</strong></li>
+                        <li>코드 재사용성 증대: WMS 공통 UI hook 개발로 유사 기능 개발 시 <strong class="text-indigo-600">코드 라인 수 30% 감소 및 개발 시간 단축</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Competency Radar Chart
+        const competencyCtx = document.getElementById('competencyChart').getContext('2d');
+        new Chart(competencyCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Frontend', 'Project Leadership', 'Embedded & IoT', 'Architecture Design', 'Backend', 'Cloud & DevOps'],
+                datasets: [{
+                    label: '종합 기술 역량',
+                    data: [95, 90, 85, 80, 75, 70],
+                    fill: true,
+                    backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                    borderColor: '#4f46e5',
+                    pointBackgroundColor: '#4f46e5',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#4f46e5'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { display: true },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        pointLabels: {
+                            font: { size: 13, weight: 'bold' },
+                            callback: function(label, index) {
+                                const score = this.chart.data.datasets[0].data[index];
+                                return `${label}: ${score}`;
+                            }
+                        },
+                        ticks: { backdropColor: 'rgba(255, 255, 255, 0.75)' }
+                    }
+                },
+                plugins: { legend: { display: false } }
+            }
+        });
+
+        // --- Performance Chart ---
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        
+        // Plugin to draw text labels on the radar chart grid lines
+        const radarAxisLabels = {
+            id: 'radarAxisLabels',
+            afterDraw(chart, args, options) {
+                if (!options.dataPoints) {
+                    return; 
+                }
+                const { ctx, scales: { r } } = chart;
+                const dataPoints = options.dataPoints;
+                const labels = chart.data.labels;
+
+                ctx.save();
+                ctx.font = '10px "Noto Sans KR", sans-serif';
+                ctx.fillStyle = 'rgba(100, 116, 139, 0.8)';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                labels.forEach((label, i) => {
+                    const angle = r.getIndexAngle(i);
+                    const axisLabels = dataPoints[label];
+
+                    if (!axisLabels) return;
+
+                    for (let j = 0; j < axisLabels.length; j++) {
+                        const levelValue = j + 1;
+                        const dist = r.getDistanceFromCenterForValue(levelValue);
+                        
+                        const offsetX = Math.sin(angle) * 15;
+                        const offsetY = -Math.cos(angle) * 15;
+                        
+                        const x = r.xCenter + dist * Math.sin(angle) + offsetX;
+                        const y = r.yCenter - dist * Math.cos(angle) + offsetY;
+
+                        ctx.fillText(axisLabels[j], x, y);
+                    }
+                });
+                ctx.restore();
+            }
+        };
+        Chart.register(radarAxisLabels);
+
+        const performanceLabels = ['Technology', 'System', 'People', 'Process', 'Influence'];
+        const performanceDataPoints = {
+            'Technology': ['Adopts', 'Specializes', 'Evangelizes', 'Masters', 'Creates'],
+            'System': ['Enhances', 'Designs', 'Owns', 'Evolves', 'Leads'],
+            'People': ['Learns', 'Supports', 'Mentors', 'Coordinates', 'Manages'],
+            'Process': ['Follows', 'Enforces', 'Challenges', 'Adjusts', 'Defines'],
+            'Influence': ['Individual', 'Team', 'Platform', 'Engineering', 'Company']
+        };
+
+        const currentPerformance = {
+            'Technology': 'Creates',
+            'System': 'Leads',
+            'People': 'Coordinates',
+            'Process': 'Defines',
+            'Influence': 'Engineering'
+        };
+        
+        const performanceChartData = performanceLabels.map(label => {
+            const levelIndex = performanceDataPoints[label].indexOf(currentPerformance[label]);
+            return levelIndex !== -1 ? levelIndex + 1 : 0;
+        });
+
+        new Chart(performanceCtx, {
+            type: 'radar',
+            data: {
+                labels: performanceLabels,
+                datasets: [{
+                    label: 'Performance',
+                    data: performanceChartData,
+                    fill: true,
+                    backgroundColor: 'rgba(129, 140, 248, 0.2)',
+                    borderColor: '#4f46e5',
+                    pointBackgroundColor: '#4f46e5',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#4f46e5'
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                        suggestedMin: 0,
+                        suggestedMax: 6, // Added dummy step for spacing
+                        pointLabels: {
+                            font: { size: 14, weight: 'bold' },
+                            color: '#374151'
+                        },
+                        ticks: {
+                            display: false,
+                            stepSize: 1
+                        }
+                    }
+                },
+                plugins: { 
+                    legend: { display: false },
+                    tooltip: {
+                         callbacks: {
+                            label: function(context) {
+                                const label = context.chart.data.labels[context.dataIndex];
+                                const value = currentPerformance[label];
+                                return `${label}: ${value}`;
+                            }
+                        }
+                    },
+                    radarAxisLabels: {
+                        dataPoints: performanceDataPoints
+                    }
+                }
+            }
+        });
+
+
+        // Project Complexity Chart
+        const complexityCtx = document.getElementById('projectComplexityChart').getContext('2d');
+        const stripedPattern = (() => {
+            const patternCanvas = document.createElement('canvas');
+            const patternCtx = patternCanvas.getContext('2d');
+            patternCanvas.width = 10;
+            patternCanvas.height = 10;
+            patternCtx.fillStyle = 'rgba(129, 140, 248, 0.6)';
+            patternCtx.fillRect(0, 0, patternCanvas.width, patternCanvas.height);
+            patternCtx.strokeStyle = 'rgba(79, 70, 229, 0.7)';
+            patternCtx.lineWidth = 1.5;
+            patternCtx.beginPath();
+            patternCtx.moveTo(0, 10);
+            patternCtx.lineTo(10, 0);
+            patternCtx.stroke();
+            return complexityCtx.createPattern(patternCanvas, 'repeat');
+        })();
+
+        new Chart(complexityCtx, {
+            type: 'bar',
+            data: {
+                labels: ['iOS 액세서리', '카셰어링 IoT', 'POS (Android/Linux)', '온라인결제 (댐댐)', '요리 자동화', 'AIOps FE', 'WMS'],
+                datasets: [{
+                    label: '기술 복잡도 점수',
+                    data: [40, 95, 70, 85, 80, 65, 50],
+                    backgroundColor: [
+                        'rgba(199, 210, 254, 0.6)', 'rgba(67, 56, 202, 0.6)', 'rgba(129, 140, 248, 0.6)', 'rgba(79, 70, 229, 0.6)', 'rgba(99, 102, 241, 0.6)', stripedPattern, 'rgba(165, 180, 252, 0.6)'
+                    ],
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: '프로젝트별 기술적 복잡도 및 기여도 (시간순)' }
+                },
+                scales: { x: { beginAtZero: true, max: 100 } }
+            }
+        });
+
+        // Stack Evolution Chart
+        const stackCtx = document.getElementById('stackEvolutionChart').getContext('2d');
+        new Chart(stackCtx, {
+            type: 'line',
+            data: {
+                labels: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [
+                    { label: 'Embedded', data: [10, 9.09, 9.09, 6.43, 6.43, 7.5, 7.5, 7.5, 6.67, 6.67, 3.08, 0.56, 0, 0, 0, 0, 0], borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'Backend', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.77, 4.44, 4.44, 4.21, 2.94, 0, 0], borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'Frontend', data: [0, 0, 0, 0.71, 0.71, 0.83, 0.83, 0.83, 1.67, 1.67, 2.31, 3.33, 3.89, 4.21, 5.29, 7.69, 10], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'Mobile/PC', data: [0, 0.91, 0.91, 2.86, 2.86, 1.67, 1.67, 1.67, 1.67, 1.67, 3.85, 1.67, 1.67, 1.58, 1.76, 2.31, 0], borderColor: '#f97316', backgroundColor: 'rgba(249, 115, 22, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { 
+                    legend: { position: 'top' },
+                    title: {
+                        display: true,
+                        text: '기술 스택 집중도 비율 (누적)'
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: { 
+                    y: { 
+                        stacked: true,
+                        beginAtZero: true, 
+                        max: 10, 
+                        title: { display: true, text: '기술 집중도' } 
+                    },
+                    x: {
+                        stacked: true
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
