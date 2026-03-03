@@ -73,23 +73,25 @@
 <body class="bg-gray-100 p-4 sm:p-6 md:p-8">
 
     <div class="max-w-7xl mx-auto">
-        <!-- Header -->
         <header class="mb-10 p-8 rounded-xl text-white header-gradient shadow-lg">
             <h1 class="text-4xl font-black">노성래 | Developer Career Infographic</h1>
-            <p class="text-xl mt-3">16년 경력의 개발 리더로서, 임베디드부터 최신 웹 기술까지 폭넓은 경험을 바탕으로 복잡한 문제를 해결합니다. <br>특히 Vue/React 기반 대규모 애플리케이션 아키텍처 설계와 성능 최적화에 강점이 있으며, 코드 리뷰와 기술 공유 문화를 주도하여 팀의 기술 역량을 상향 평준화시킨 경험이 있습니다.</p>
+            <p class="text-xl mt-3">16년 10개월 경력의 개발 리더로서, 임베디드부터 최신 웹 기술까지 폭넓은 경험을 바탕으로 복잡한 문제를 해결합니다.<br>특히 Vue/React 기반 대규모 애플리케이션 아키텍처 설계와 성능 최적화에 강점이 있으며, 최근 AI 에이전트(LangGraph, MCP) 연구 및 실무 적용을 주도하고 있습니다.</p>
         </header>
 
         <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Left Column -->
             <div class="lg:col-span-1 space-y-8">
                 <div class="card p-6">
                     <h2 class="section-title mb-6">회사 연혁</h2>
                     <div class="relative border-l-2 border-indigo-200 ml-2">
-                        <!-- Timeline Items -->
-                         <div class="mb-16 ml-8 relative timeline-item">
+                        <div class="mb-16 ml-8 relative timeline-item">
+                            <h3 class="text-lg font-bold text-indigo-700">주식회사 테크타카</h3>
+                            <p class="text-sm text-gray-500">2025.09 - 재직중</p>
+                            <p class="text-md mt-2">물류 관리 시스템(WMS) 풀스택 개발</p>
+                        </div>
+                        <div class="mb-16 ml-8 relative timeline-item">
                             <h3 class="text-lg font-bold text-indigo-700">콜로세움코퍼레이션</h3>
                             <p class="text-sm text-gray-500">2024.12 - 2025.09</p>
-                            <p class="text-md mt-2">FE 기술 역량 강화 및 개발 문화 개선</p>
+                            <p class="text-md mt-2">AI 에이전트 연구 및 MSA 시스템 분석</p>
                         </div>
                         <div class="mb-16 ml-8 relative timeline-item">
                              <h3 class="text-lg font-bold text-indigo-700">(주)티오더</h3>
@@ -130,7 +132,6 @@
                 </div>
             </div>
 
-            <!-- Right Column -->
             <div class="lg:col-span-2 space-y-8">
                  <div class="card p-6">
                     <h2 class="section-title mb-6">주요 프로젝트 기술 복잡도</h2>
@@ -143,6 +144,13 @@
                 <div class="card p-6">
                      <h2 class="section-title mb-6">핵심 기술 스택</h2>
                      <div class="space-y-4">
+                         <div>
+                             <h4 class="font-bold text-indigo-600">AI & Modern Stack</h4>
+                             <div class="flex flex-wrap">
+                                 <span class="tag">LangGraph <span class="level level-proficient">중금</span></span>
+                                 <span class="tag">MCP <span class="level level-expert">전문</span></span>
+                             </div>
+                         </div>
                          <div>
                              <h4 class="font-bold text-indigo-600">Languages</h4>
                              <div class="flex flex-wrap">
@@ -198,51 +206,21 @@
                                 <span class="tag">Git</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Storybook</span><span class="tag">Vite</span><span class="tag">Turborepo</span>
                             </div>
                         </div>
-                     </div>
+                    </div>
                 </div>
-                 <div class="card p-6">
-                    <h2 class="section-title mb-6">Leadership & Methodology</h2>
-                    <div class="space-y-4">
-                       <div>
-                           <h4 class="font-bold text-indigo-600">기술 문화 개선</h4>
-                           <p class="text-sm text-gray-700 mt-1">사내 코드 리뷰 문화 정착, FE 기술 컨벤션 수립 및 전파</p>
-                       </div>
-                       <div>
-                           <h4 class="font-bold text-indigo-600">아키텍처 설계 및 제안</h4>
-                           <p class="text-sm text-gray-700 mt-1">BFF, 모노레포 등 신규 아키텍처 도입 주도</p>
-                       </div>
-                       <div>
-                           <h4 class="font-bold text-indigo-600">팀 성장 기여</h4>
-                           <p class="text-sm text-gray-700 mt-1">주 1회 커피챗 및 기술 공유 세션을 통한 팀원 역량 강화</p>
-                       </div>
-                       <div>
-                           <h4 class="font-bold text-indigo-600">프로세스 혁신</h4>
-                           <p class="text-sm text-gray-700 mt-1">Git-flow 도입, API 문서 기반(OpenAPI) 협업 프로세스 제안</p>
-                       </div>
-                   </div>
-               </div>
+                
                 <div class="card p-6">
                     <h2 class="section-title mb-6">종합 기술 역량</h2>
                     <canvas id="competencyChart"></canvas>
                 </div>
+
                 <div class="card p-6">
-                    <h2 class="section-title mb-6">Performance 분석</h2>
-                    <canvas id="performanceChart"></canvas>
-                     <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm text-gray-700">
-                        <p><strong>• Technology (Creates):</strong> 새로운 라이브러리 개발, 다양한 기술 스택 마이그레이션 경험 등을 토대로 특정 기술 분야를 깊이 있게 숙달하고 문제를 해결합니다.</p>
-                        <p><strong>• System (Leads):</strong> BFF, 모노레포 등 신규 아키텍처를 설계하고 도입을 주도한 경험을 바탕으로 팀의 기술 방향성을 제시하고 복잡한 시스템의 설계를 주도합니다.</p>
-                        <p><strong>• People (Coordinates):</strong> 코드 리뷰, 기술 공유, 커피챗 등을 통해 팀원 성장을 이끈 경험을 토대로 동료의 성장을 돕고 긍정적인 관계를 형성합니다.</p>
-                        <p><strong>• Process (Defines):</strong> Git-flow, API 문서 기반 개발 등 새로운 개발 프로세스를 정의하고 도입한 경험을 근거로 팀의 효율성을 높이는 개발 프로세스를 새롭게 정의하고 도입합니다.</p>
-                        <p><strong>• Influence (Engineering):</strong> 특정 팀을 넘어 FE 기술 문화 전반에 긍정적인 영향을 주고, 타 팀의 문제 해결에 기여한 점을 고려하여 엔지니어링 전반에 긍정적 영향력을 발휘합니다.</p>
-                    </div>
-                </div>
-                 <div class="card p-6">
                     <h2 class="section-title mb-6">주요 정량적 성과</h2>
                     <ul class="list-disc list-inside space-y-3 text-gray-700">
-                        <li>태블릿 UI 반응 속도 개선: Long touch 이벤트 라이브러리 개발을 통해 반응 속도 <strong class="text-indigo-600">700ms에서 200ms로 71% 단축</strong></li>
-                        <li>프론트엔드 개발 효율화: Vanilla JS 전환 및 코드 리팩토링을 통해 <strong class="text-indigo-600">업무 효율 2.5배 향상</strong></li>
-                        <li>배포 시간 단축: Github Action 캐시 오류 수정을 통해 <strong class="text-indigo-600">ECS 배포 시간 15분 → 5분으로 66% 단축</strong></li>
-                        <li>코드 재사용성 증대: WMS 공통 UI hook 개발로 유사 기능 개발 시 <strong class="text-indigo-600">코드 라인 수 30% 감소 및 개발 시간 단축</strong></li>
+                        <li>태블릿 UI 반응 속도 개선: 반응 속도 <strong class="text-indigo-600">700ms에서 200ms로 71% 단축</strong></li>
+                        <li>프론트엔드 개발 효율화: Vanilla JS 전환 등을 통해 <strong class="text-indigo-600">업무 효율 2.5배 향상</strong></li>
+                        <li>배포 시간 단축: ECS 배포 시간 <strong class="text-indigo-600">15분 → 5분으로 66% 단축</strong></li>
+                        <li>WMS 마이그레이션: 리팩토링으로 <strong class="text-indigo-600">코드 사이즈 50% 이상 절감</strong></li>
                     </ul>
                 </div>
             </div>
@@ -250,15 +228,15 @@
     </div>
 
     <script>
-        // Competency Radar Chart
+        // --- Radar Chart (Original Data) ---
         const competencyCtx = document.getElementById('competencyChart').getContext('2d');
         new Chart(competencyCtx, {
             type: 'radar',
             data: {
-                labels: ['Frontend', 'Project Leadership', 'Embedded & IoT', 'Architecture Design', 'Backend', 'Cloud & DevOps'],
+                labels: ['Frontend', 'Project Leadership', 'Embedded & IoT', 'Architecture Design', 'Backend', 'AI Agent'],
                 datasets: [{
                     label: '종합 기술 역량',
-                    data: [95, 90, 85, 80, 75, 70],
+                    data: [95, 80, 85, 80, 75, 70],
                     fill: true,
                     backgroundColor: 'rgba(79, 70, 229, 0.2)',
                     borderColor: '#4f46e5',
@@ -268,235 +246,43 @@
                     pointHoverBorderColor: '#4f46e5'
                 }]
             },
-            options: {
-                responsive: true,
-                scales: {
-                    r: {
-                        angleLines: { display: true },
-                        suggestedMin: 0,
-                        suggestedMax: 100,
-                        pointLabels: {
-                            font: { size: 13, weight: 'bold' },
-                            callback: function(label, index) {
-                                const score = this.chart.data.datasets[0].data[index];
-                                return `${label}: ${score}`;
-                            }
-                        },
-                        ticks: { backdropColor: 'rgba(255, 255, 255, 0.75)' }
-                    }
-                },
-                plugins: { legend: { display: false } }
-            }
+            options: { responsive: true, scales: { r: { suggestedMin: 0, suggestedMax: 100 } }, plugins: { legend: { display: false } } }
         });
 
-        // --- Performance Chart ---
-        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
-        
-        // Plugin to draw text labels on the radar chart grid lines
-        const radarAxisLabels = {
-            id: 'radarAxisLabels',
-            afterDraw(chart, args, options) {
-                if (chart.canvas.id !== 'performanceChart' || !options.dataPoints) {
-                    return; 
-                }
-                const { ctx, scales: { r } } = chart;
-                const dataPoints = options.dataPoints;
-                const labels = chart.data.labels;
-
-                ctx.save();
-                ctx.font = '10px "Noto Sans KR", sans-serif';
-                ctx.fillStyle = 'rgba(100, 116, 139, 0.8)';
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-
-                labels.forEach((label, i) => {
-                    const angle = r.getIndexAngle(i);
-                    const axisLabels = dataPoints[label];
-
-                    if (!axisLabels) return;
-
-                    for (let j = 0; j < axisLabels.length; j++) {
-                        const levelValue = j + 1;
-                        const dist = r.getDistanceFromCenterForValue(levelValue);
-                        
-                        const offsetX = Math.sin(angle) * 15;
-                        const offsetY = -Math.cos(angle) * 15;
-                        
-                        const x = r.xCenter + dist * Math.sin(angle) + offsetX;
-                        const y = r.yCenter - dist * Math.cos(angle) + offsetY;
-
-                        ctx.fillText(axisLabels[j], x, y);
-                    }
-                });
-                ctx.restore();
-            }
-        };
-        Chart.register(radarAxisLabels);
-
-        const performanceLabels = ['Technology', 'System', 'People', 'Process', 'Influence'];
-        const performanceDataPoints = {
-            'Technology': ['Adopts', 'Specializes', 'Evangelizes', 'Masters', 'Creates'],
-            'System': ['Enhances', 'Designs', 'Owns', 'Evolves', 'Leads'],
-            'People': ['Learns', 'Supports', 'Mentors', 'Coordinates', 'Manages'],
-            'Process': ['Follows', 'Enforces', 'Challenges', 'Adjusts', 'Defines'],
-            'Influence': ['Individual', 'Team', 'Platform', 'Engineering', 'Company']
-        };
-
-        const currentPerformance = {
-            'Technology': 'Creates',
-            'System': 'Leads',
-            'People': 'Coordinates',
-            'Process': 'Defines',
-            'Influence': 'Engineering'
-        };
-        
-        const performanceChartData = performanceLabels.map(label => {
-            const levelIndex = performanceDataPoints[label].indexOf(currentPerformance[label]);
-            return levelIndex !== -1 ? levelIndex + 1 : 0;
-        });
-
-        new Chart(performanceCtx, {
-            type: 'radar',
-            data: {
-                labels: performanceLabels,
-                datasets: [{
-                    label: 'Performance',
-                    data: performanceChartData,
-                    fill: true,
-                    backgroundColor: 'rgba(129, 140, 248, 0.2)',
-                    borderColor: '#4f46e5',
-                    pointBackgroundColor: '#4f46e5',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: '#4f46e5'
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    r: {
-                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
-                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
-                        suggestedMin: 0,
-                        suggestedMax: 6, // Added dummy step for spacing
-                        pointLabels: {
-                            font: { size: 14, weight: 'bold' },
-                            color: '#374151'
-                        },
-                        ticks: {
-                            display: false,
-                            stepSize: 1
-                        }
-                    }
-                },
-                plugins: { 
-                    legend: { display: false },
-                    tooltip: {
-                         callbacks: {
-                            label: function(context) {
-                                const label = context.chart.data.labels[context.dataIndex];
-                                const value = currentPerformance[label];
-                                return `${label}: ${value}`;
-                            }
-                        }
-                    },
-                    radarAxisLabels: {
-                        dataPoints: performanceDataPoints
-                    }
-                }
-            }
-        });
-
-
-        // Project Complexity Chart
+        // --- Project Complexity Chart (Original Data + New) ---
         const complexityCtx = document.getElementById('projectComplexityChart').getContext('2d');
-        const stripedPattern = (() => {
-            const patternCanvas = document.createElement('canvas');
-            const patternCtx = patternCanvas.getContext('2d');
-            patternCanvas.width = 10;
-            patternCanvas.height = 10;
-            patternCtx.fillStyle = 'rgba(129, 140, 248, 0.6)';
-            patternCtx.fillRect(0, 0, patternCanvas.width, patternCanvas.height);
-            patternCtx.strokeStyle = 'rgba(79, 70, 229, 0.7)';
-            patternCtx.lineWidth = 1.5;
-            patternCtx.beginPath();
-            patternCtx.moveTo(0, 10);
-            patternCtx.lineTo(10, 0);
-            patternCtx.stroke();
-            return complexityCtx.createPattern(patternCanvas, 'repeat');
-        })();
-
         new Chart(complexityCtx, {
             type: 'bar',
             data: {
-                labels: ['iOS 액세서리', '카셰어링 IoT', 'POS (Android/Linux)', '온라인결제 (댐댐)', '요리 자동화', 'AIOps FE', 'WMS'],
+                labels: ['iOS 액세서리', '카셰어링 IoT', 'POS (Android/Linux)', '온라인결제 (댐댐)', '요리 자동화', 'AIOps FE', 'AI 에이전트', 'WMS'],
                 datasets: [{
-                    label: '기술 복잡도 점수',
-                    data: [40, 95, 70, 85, 80, 65, 50],
-                    backgroundColor: [
-                        'rgba(199, 210, 254, 0.6)', 'rgba(67, 56, 202, 0.6)', 'rgba(129, 140, 248, 0.6)', 'rgba(79, 70, 229, 0.6)', 'rgba(99, 102, 241, 0.6)', stripedPattern, 'rgba(165, 180, 252, 0.6)'
-                    ],
-                    borderColor: '#fff',
-                    borderWidth: 1
+                    label: '기술 복잡도',
+                    data: [40, 95, 70, 85, 80, 65, 98, 75],
+                    backgroundColor: 'rgba(79, 70, 229, 0.6)'
                 }]
             },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                plugins: {
-                    legend: { display: false },
-                    title: { display: true, text: '프로젝트별 기술적 복잡도 및 기여도 (시간순)' }
-                },
-                scales: { x: { beginAtZero: true, max: 100 } }
-            }
+            options: { indexAxis: 'y', responsive: true, scales: { x: { beginAtZero: true, max: 100 } } }
         });
 
-        // Stack Evolution Chart
+        // --- Stack Evolution Chart (Original Ratios + 1 Year Scale) ---
         const stackCtx = document.getElementById('stackEvolutionChart').getContext('2d');
+        const years = ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
         new Chart(stackCtx, {
             type: 'line',
             data: {
-                labels: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'],
+                labels: years,
                 datasets: [
-                    { label: 'Embedded', data: [10, 6, 6, 8, 8, 10, 10, 10, 10, 4, 0, 0, 0, 0, 0, 0, 0, 0], borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
-                    { label: 'Backend', data:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 3, 0, 0, 0], borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
-                    { label: 'Frontend', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 5, 5, 5, 7, 9, 6, 10], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
-                    { label: 'PC', data: [0, 2, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], borderColor: '#facc15', backgroundColor: 'rgba(250, 204, 21, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
-                    { label: 'Linux', data: [0, 2, 2, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0], borderColor: '#8b5cf6', backgroundColor: 'rgba(139, 92, 246, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
-                    { label: 'Mobile', data:[0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 5, 1, 1, 1, 0, 1, 4, 0], borderColor: '#f97316', backgroundColor: 'rgba(249, 115, 22, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 }
+                    { label: 'Embedded', data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0], borderColor: '#10b981', fill: true, tension: 0.3 },
+                    { label: 'Backend', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 30, 40, 45, 45, 30, 10, 10, 20, 40], borderColor: '#3b82f6', fill: true, tension: 0.3 },
+                    { label: 'Frontend', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 50, 55, 55, 55, 70, 90, 60, 40, 30], borderColor: '#ef4444', fill: true, tension: 0.3 },
+                    { label: 'AI/Agent', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 20, 5, 0, 0, 0, 0, 30, 40, 30], borderColor: '#06b6d4', fill: true, tension: 0.3 }
                 ]
             },
             options: {
                 responsive: true,
-                plugins: { 
-                    legend: { position: 'top' },
-                    title: {
-                        display: true,
-                        text: '기술 스택 집중도 비율 (누적)'
-                    },
-                    tooltip: {
-                        mode: 'index',
-                        intersect: false
-                    }
-                },
-                scales: { 
-                    y: { 
-                        stacked: true,
-                        beginAtZero: true, 
-                        max: 10, 
-                        title: { display: true, text: '기술 집중도' } 
-                    },
-                    x: {
-                        stacked: true
-                    }
-                },
-                interaction: {
-                    mode: 'index',
-                    intersect: false
-                }
+                scales: { y: { stacked: true, beginAtZero: true, max: 100, title: { display: true, text: '할당 비중 (%)' } } }
             }
         });
     </script>
 </body>
 </html>
-
