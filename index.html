@@ -264,23 +264,49 @@
             options: { indexAxis: 'y', responsive: true, scales: { x: { beginAtZero: true, max: 100 } } }
         });
 
-        // --- Stack Evolution Chart (Original Ratios + 1 Year Scale) ---
         const stackCtx = document.getElementById('stackEvolutionChart').getContext('2d');
-        const years = ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'];
         new Chart(stackCtx, {
             type: 'line',
             data: {
-                labels: years,
+                labels: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
                 datasets: [
-                    { label: 'Embedded', data: [100, 100, 100, 100, 100, 100, 100, 100, 100, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0], borderColor: '#10b981', fill: true, tension: 0.3 },
-                    { label: 'Backend', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 30, 40, 45, 45, 30, 10, 10, 20, 40], borderColor: '#3b82f6', fill: true, tension: 0.3 },
-                    { label: 'Frontend', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 50, 55, 55, 55, 70, 90, 60, 40, 30], borderColor: '#ef4444', fill: true, tension: 0.3 },
-                    { label: 'AI/Agent', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 20, 5, 0, 0, 0, 0, 30, 40, 30], borderColor: '#06b6d4', fill: true, tension: 0.3 }
+                    { label: 'Embedded', data: [10, 6, 6, 8, 8, 10, 10, 10, 10, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0], borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'Backend', data:  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 4, 3, 0, 0, 0, 3], borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'Frontend', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 5, 5, 5, 7, 9, 6, 10, 3], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'Frontend', data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4], borderColor: '#ef4444', backgroundColor: 'rgba(239, 68, 68, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'PC', data: [0, 2, 2, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], borderColor: '#facc15', backgroundColor: 'rgba(250, 204, 21, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'Linux', data: [0, 2, 2, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0], borderColor: '#8b5cf6', backgroundColor: 'rgba(139, 92, 246, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 },
+                    { label: 'Mobile', data:[0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 5, 1, 1, 1, 0, 1, 4, 0, 0], borderColor: '#f97316', backgroundColor: 'rgba(249, 115, 22, 0.5)', fill: true, tension: 0.3, pointRadius: 2, pointHoverRadius: 5 }
                 ]
             },
             options: {
                 responsive: true,
-                scales: { y: { stacked: true, beginAtZero: true, max: 100, title: { display: true, text: '할당 비중 (%)' } } }
+                plugins: { 
+                    legend: { position: 'top' },
+                    title: {
+                        display: true,
+                        text: '기술 스택 집중도 비율 (누적)'
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: { 
+                    y: { 
+                        stacked: true,
+                        beginAtZero: true, 
+                        max: 10, 
+                        title: { display: true, text: '기술 집중도' } 
+                    },
+                    x: {
+                        stacked: true
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                }
             }
         });
     </script>
